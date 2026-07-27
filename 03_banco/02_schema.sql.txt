@@ -1,0 +1,67 @@
+create table Clientes(
+	ID_cliente int primary key,
+	Nome_cliente varchar(100),
+	CPF char(11) unique,
+	Telefone varchar(20),
+	ID_professor int
+ );
+ 
+ create table Professor(
+ 	ID_professor int primary key,
+ 	Nome_professor varchar(100),
+ 	status_professor varchar(20),
+ 	Especialidade varchar(20)
+ );
+ 
+  create table Pagamentos(
+ 	ID_pagamento int primary key,
+ 	ID_matricula int,
+ 	Metodo_pagamento varchar(15),
+ 	Data_pagamento date,
+ 	status varchar(15),
+ 	Valor_pago decimal(10,2) check (Valor_pago >= 0),
+ );
+ 
+ create table Frequencia(
+ 	ID_frequencia int primary key,
+ 	ID_cliente int,
+ 	Entrada timestamp,
+ 	Saida timestamp
+ );
+ 
+ create table Planos(
+ 	ID_plano int primary key,
+ 	Nome_plano varchar(),
+ 	Valor_plano decimal(10,2) check (Valor_plano >= 0),
+ 	Descricao varchar(30),
+ 	duracao varchar(20)
+ );
+ 
+ create table Matricula(
+ 	ID_matricula int primary key,
+ 	ID_cliente int,
+ 	ID_plano int,
+ 	Data_inicio date, 
+ 	Data_fim date
+ );
+ 
+ create table Produtos(
+ 	ID_produto int primary key,
+ 	Nome_produto varchar(25),
+ 	Estoque int,
+ 	preco decimal(10,2) check (preco >= 0)
+ );
+ 
+ create table Consumos(
+ 	ID_consumo int primary key,
+ 	ID_cliente int,
+ 	Data_consumo date,
+ 	Valor_total decimal(10,2) check (Valor_total >= 0)
+ );
+ 
+ create table Itens_consumo(
+ 	ID_item int primary key,
+ 	ID_consumo int,
+ 	ID_produto int,
+ 	Quantidade int
+ );
