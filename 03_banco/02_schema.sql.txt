@@ -1,32 +1,32 @@
 create table Cliente(
 	ID_cliente int Serial primary key,
-	Nome_cliente varchar(100),
+	Nome_cliente varchar(100) not null,
 	CPF char(11) not null unique,
-	Telefone char(20),
-	ID_professor int
+	Telefone varchar(20),
+	ID_professor int  references Professor (ID_professor)
  );
  
  create table Professor(
  	ID_professor int Serial primary key,
  	Nome_professor varchar(100) not null,
- 	status_professor varchar(20),
+ 	status_professor varchar(20) check ( status_professor in ('Ativo', 'Inativo', 'Ferias')),
  	Especialidade varchar(20)
  );
- 
+
   create table Pagamento(
  	ID_pagamento int Serial primary key,
- 	ID_matricula int not null,
+ 	ID_matricula int not null references Matricula (ID_matricula),
  	Metodo_pagamento varchar(15),
  	Data_pagamento date,
- 	status varchar(15) check (Status = 'Pago' or 'Pendente' or 'Cancelado') not null,
- 	Valor_pago decimal(10,2) check (Valor_pago >= 0),
+ 	status varchar(15) check (status in ('Pago', 'Pendente', 'Cancelado')) not null,
+ 	Valor_pago decimal(10,2) check (Valor_pago >= 0)
  );
- 
+
  create table Frequencia(
  	ID_frequencia int Serial primary key,
- 	ID_cliente int not null,
+ 	ID_cliente int not null references Cliente (ID_cliente),
  	Entrada timestamp,
- 	Saida timestamp
+ 	Saida timestamp check (Saida > Entrada)
  );
  
  create table Plano(
@@ -39,10 +39,10 @@ create table Cliente(
  
  create table Matricula(
  	ID_matricula int Serial primary key,
- 	ID_cliente int not null,
- 	ID_plano int not null,
+ 	ID_cliente int not null references Cliente (ID_cliente),
+ 	ID_plano int not null references Plano (ID_plano),
  	Data_inicio date not null,
- 	status varchar(15) check (Status = 'Ativa' or 'Cancelada' or 'Vencida') not null,
+ 	status varchar(15) check (status in ('Ativa', 'Cancelada', 'Vencida')) not null,
  	Data_fim date not null
  );
  
@@ -55,15 +55,14 @@ create table Cliente(
  
  create table Consumo(
  	ID_consumo int Serial primary key,
- 	ID_cliente int not null,
+ 	ID_cliente int not null references Cliente (ID_cliente),
  	Data_consumo date not null,
  	Valor_total decimal(10,2) check (Valor_total >= 0) not null
  );
  
  create table Itens_consumo(
  	ID_item int Serial primary key not null,
- 	ID_consumo int not null,
- 	ID_produto int not null,
- 	Quantidade int
+ 	ID_consumo int not null references Consumo (ID_consumo),
+ 	ID_produto int not null references Produto (ID_produto),
+ 	Quantidade int check (Quantidade > 0)
  );
- 
