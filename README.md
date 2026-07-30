@@ -98,7 +98,7 @@ Durante essa etapa foram definidos:
 
 <p align="center">
 
-<img src="./docs/assets/modelagem.gif" width="900">
+<img src="./02_modelagem/Gif 1 construção modelagem banco.gif" width="900">
 
 </p>
 
