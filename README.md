@@ -4,9 +4,9 @@
 
 ### Implantação, Administração e Monitoramento de um Banco de Dados PostgreSQL
 
-Projeto pessoal desenvolvido para, contemplando desde a modelagem até o monitoramento de um ambiente PostgreSQL em um servidor Linux.
+Projeto pessoal desenvolvido com objetivo de aprimorar meus conhecimentos e desafiar meu raciocínio lógico, contemplando desde a modelagem até o monitoramento de um ambiente PostgreSQL em um servidor Linux.
 
-<img src="./02_modelagem/Gif 1 construção modelagem.gif" width="650">
+
 
 </div>
 
@@ -47,19 +47,19 @@ O banco de dados modela um sistema de **e-commerce**, permitindo o gerenciamento
 
 ```
 Windows 10
-    |
-    | SSH
+   |
+   | SSH
    ▼
 Ubuntu Server (VirtualBox)
-     │
-     │
-    ▼
+   │
+   │
+   ▼
  PostgreSQL
-      │
-     ├── DBeaver
-     ├── PostgreSQL Exporter
-     ├── Prometheus
-      └── Grafana
+   │
+   ├── DBeaver
+   ├── PostgreSQL Exporter
+   ├── Prometheus
+   └── Grafana
 ```
 
 ---
