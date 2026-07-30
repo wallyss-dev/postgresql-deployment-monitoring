@@ -99,7 +99,7 @@ Durante essa etapas me mantive focado em seguir este plano: Meu banco deveria te
 
 <p align="center">
 
-<img src="./02_modelagem/Gif 1 construção modelagem banco.gif" width="700">
+<img src=".//" width="700">
 
 </p>
 
