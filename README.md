@@ -109,14 +109,14 @@ Durante essa etapas me mantive focado em seguir este plano: Meu banco deveria te
 
 ```
  postgresql-linux-dba
- │
+│
 ├── README.md
- │
+│
 ├── database
- │   ├── schema.sql
- │   ├── inserts.sql
- │   └── consultas.sql
- │ 
+│   ├── schema.sql
+│   ├── inserts.sql
+│   └── consultas.sql
+│ 
 ├── docs
 │   ├── planejamento.md
 │   ├── configuracao-vm.md
