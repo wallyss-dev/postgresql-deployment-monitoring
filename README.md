@@ -31,7 +31,7 @@ O banco de dados modela um sistema de **e-commerce**, permitindo o gerenciamento
 
 ---
 
-# 🎯 Objetivos
+# Objetivos
 
 - Implantar um servidor PostgreSQL em Linux.
 - Configurar acesso remoto via DBeaver.
