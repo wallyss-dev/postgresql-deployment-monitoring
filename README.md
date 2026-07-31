@@ -111,29 +111,37 @@ Durante essa etapas me mantive focado em seguir este plano: Meu banco deveria te
 ```
  postgresql-linux-dba
 │
-├── README.md
 │
-├── database
+├── architecture
+│   ├── Arquivo_code_modelagem_final
+│   ├── Modelagem.gif
+|   ├── Servidor.png
+|   └── Modelo_final
+│
+├── db
+│   ├── database.sql
 │   ├── schema.sql
-│   ├── inserts.sql
-│   └── consultas.sql
+|   ├── seed.sql
+|   ├── indexes.sql
+|   ├── workload.sql
+│   └── validation.sql
 │ 
 ├── docs
 │   ├── planejamento.md
 │   ├── configuracao-vm.md
 │   ├── instalacao-postgresql.md
 │   ├── acesso-remoto.md
-│   ├── monitoramento.md
-│   └── assets
-│       ├── modelagem.gif
-│       ├── diagrama.png
-│       └── dashboard.png
+│   └── monitoramento.md
 │
-├── monitoring
+├── observability
+|   ├── monitoramento.md
 │   ├── prometheus
+|   |   └──  métricas.png
 │   └── grafana
+|        └──  métricas.png
 │
-└── scripts
+│ 
+└── READNE.MD
 ```
 
 ---
