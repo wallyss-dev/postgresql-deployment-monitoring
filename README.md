@@ -65,6 +65,7 @@ Ubuntu Server (VirtualBox)
 ---
 
 #  Tecnologias Utilizadas
+<img src="architecture/Servidor.png.png/" width="200">
 
 | Ferramenta | Finalidade |
 |------------|------------|
