@@ -1,0 +1,95 @@
+create table cliente (
+	id_cliente serial primary key,
+	nome varchar(100) not null,
+	cpf char(11) unique not null,
+	telefone varchar(20),
+	data_cadastro timestamp not null,
+	status varchar(10) not null
+);
+
+create table categoria(
+	id_categoria serial primary key,
+	nome varchar(50) not null,
+	descricao varchar(150)
+);
+
+create table produto(
+	id_produto serial primary key,
+	id_categoria int,
+	nome varchar(100) not null,
+	descricao varchar(150),
+	preco decimal(10,2) check (preco >= 0) not null,
+	ativo boolean not null,
+	data_cadastro timestamp not null
+);
+
+create table estoque(
+	id_estoque serial primary key,
+	id_produto int,
+	quantidade int,
+	estoque_minimo int not null,
+	ultima_atualizacao timestamp not null
+);
+
+create table endereco(
+	id_endereco serial primary key,
+	id_cliente int,
+	cepchar(8),
+	logradouro varchar(150),
+	numero varchar(10),
+	complemento varchar(100),
+	bairro varchar(60) not null,
+	cidadevarchar(60) not null,
+	estado char(2) not null,
+);
+
+create table carrinho(
+	id_carrinho serial primary key,
+	id_cliente int,
+	data_criacao timestamp,
+	status varchar(20) not null,
+);
+
+create table itens_carrinho(
+	id_itens_carrinho serial primary key,
+	id_carrinho int,
+	id_produto int,
+	quantidade int,
+	preco_unitario decimal()
+);
+
+create table pedido(
+	id_pedido serial primary key,
+	id_cliente int,
+	id_endereco int,
+	data_pedido timestamp,
+	status,
+	valor_total decimal()
+);
+
+create table itens_pedido(
+	id_itens_pedido serial primary key ,
+	id_pedido int not null,
+	id_produto int not null,
+	quantidade int not null check (quantidade > 0),
+	preco_unitario decimal(10,2) not null check (preco_unitario >= 0),
+	subtotal decimal(10,2) not null check (subtotal >= 0)
+);
+
+create table pagamento(
+	id_pagamento serial primary key,
+	id_pedido int,
+	metodo_pagamento varchar(),
+	valor decimal(10,2) not null check (valor >= 0),
+	status varchar(20) not null,
+	data_pagamento timestamp not null
+);
+
+create table avaliacao(
+	id_avaliacao SERIAL primary key,
+	id_cliente int not null,
+	id_produto int not null,
+	nota int check (nota >= and nota <= 5) not null,
+	comentario varchar(200),
+	data_avaliacao timestamp not null
+);
