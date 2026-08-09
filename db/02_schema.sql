@@ -93,3 +93,72 @@ create table avaliacao(
 	comentario text,
 	data_avaliacao timestamp not null
 );
+
+alter table produto 
+add constraint fk_produto_categoria
+foreign key (id_categoria)
+references categoria(id_categoria);
+
+alter table estoque
+add constraint fk_estoque_produto
+foreign key (id_produto)
+references produto(id_produto);
+
+alter table endereco
+add constraint fk_endereco_cliente
+foreign key (id_cliente)
+references cliente(id_cliente);
+
+alter table carrinho
+add constraint fk_carrinho_cliente
+foreign key (id_cliente)
+references cliente(id_cliente);
+
+alter table item_carrinho 
+add constraint fk_item_carrinho_carrinho
+foreign key (id_carrinho)
+references carrinho(id_carrinho);
+
+alter table item_carrinho 
+add constraint fk_item_carrinho_produto
+foreign key (id_produto)
+references produto(id_produto);
+
+alter table pedido 
+add constraint fk_pedido_cliente
+foreign key (id_cliente)
+references cliente(id_cliente);
+
+alter table pedido  
+add constraint fk_pedido_endereco
+foreign key (id_endereco)
+references endereco(id_endereco);
+
+alter table item_pedido
+add constraint fk_item_pedido_pedido
+foreign key (id_pedido)
+references pedido(id_pedido);
+
+alter table item_pedido
+add constraint fk_item_pedido_produto
+foreign key (id_produto)
+references produto(id_produto);
+
+alter table pagamento
+add constraint fk_pagamento_pedido
+foreign key (id_pedido)
+references pedido(id_pedido);
+
+
+alter table avaliacao
+add constraint fk_avaliacao_cliente
+foreign key (id_cliente)
+references cliente(id_cliente);
+
+alter table avaliacao
+add constraint fk_avaliacao_produto
+foreign key (id_produto)
+references produto(id_produto);
+
+
+
