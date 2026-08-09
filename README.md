@@ -142,7 +142,7 @@ Durante essa etapas me mantive focado em seguir este plano: Meu banco deveria te
 |        └──  métricas.png
 │
 │ 
-└── READNE.MD
+└── README.MD
 ```
 
 ---
