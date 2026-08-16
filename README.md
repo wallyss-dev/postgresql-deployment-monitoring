@@ -128,11 +128,11 @@ Durante essa etapas me mantive focado em seguir este plano: Meu banco deveria te
 │   └── validation.sql
 │ 
 ├── docs
-│   ├── planejamento.md
-│   ├── configuracao-vm.md
+│   ├── acesso_remoto.md
+│   ├── configuracao-vm.m
 │   ├── instalacao-postgresql.md
-│   ├── acesso-remoto.md
-│   └── monitoramento.md
+│   ├── monitoramento.md
+│   └── Planejamento.md
 │
 ├── observability
 |   ├── monitoramento.md
@@ -231,9 +231,9 @@ Todo o desenvolvimento foi documentado, incluindo:
 - [x] Configuração SSH
 - [x] Instalação PostgreSQL
 - [x] Configuração do acesso remoto
-- [ ] Criação das tabelas
-- [ ] Inserção de dados
-- [ ] PostgreSQL Exporter
+- [x] Criação das tabelas
+- [x] Inserção de dados
+- [x] PostgreSQL Exporter
 - [ ] Prometheus
 - [ ] Grafana
 - [ ] Dashboard
